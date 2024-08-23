@@ -1,12 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
+import GLOBAL9x8AdvantageEVO from './data/Images/GLOBAL9x8AdvantageEVO.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={GLOBAL9x8AdvantageEVO} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
