@@ -2,8 +2,9 @@ import React from "react";
 import { Grid, Button, Box } from "@mui/material";
 import Logo from "../data/Images/hexagon-logo.svg";
 
-const NavButton = () => {
+const NavButton = (props:any) => {
   const appLink = ["App 1", "App 2", "App 3"];
+  console.log("NavButton Props: " + props.objectId);
 
   return (
     <Grid

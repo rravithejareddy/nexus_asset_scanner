@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Home from "./pages/Home";
+import { Route, Routes } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 function App() {
@@ -17,9 +18,10 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <Home />
-    </div>
+    <Routes>
+      <Route path="/:objectId" element={<Home objectId={objectId} />} />
+      <Route path="/" element={<Home />} />
+    </Routes>
   );
 }
 

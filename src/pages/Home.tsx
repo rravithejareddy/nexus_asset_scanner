@@ -4,24 +4,20 @@ import Description from "../component/Description";
 import NavButton from "../component/NavButton";
 import { Box } from "@mui/material";
 
-const Home = () => {
-  const handleQRScannerClick = () => {
-    // Add QR Scanner functionality here
-  };
+interface HomeProps {
+  objectId?: string;
+}
 
-  const handleOpenAppClick = () => {
-    // Add Open App functionality here
-  };
-
+const Home: React.FC<HomeProps> = ({ objectId }) => {
   return (
     <div style={styles.app}>
       <Header />
       <Box>
         <Box>
-          <Description />
+          <Description objectId={objectId} />
         </Box>
       </Box>
-      <NavButton />
+      <NavButton objectId={objectId}/>
     </div>
   );
 };

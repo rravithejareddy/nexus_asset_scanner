@@ -9,15 +9,18 @@ import armImage from "../data/Images/Absolute-Arm-7-Axis-product-image.jpg";
 
 import mockData from "../data/assetData.json";
 
-const Description = () => {
-  const fixedObjectID = '3ca985c0-9a87-43a8-af1f-6fe89a65f41a';
+const Description = (props:any) => {
+  // const fixedObjectID = '3ca985c0-9a87-43a8-af1f-6fe89a65f41a';
+  console.log("Object Id in Description : " + props.objectId);
+  const URLObjectId = props.objectId;
+
   const [data, setData] = useState<any>(null);
   useEffect(() => {
-    if (fixedObjectID) {
-      const item = mockData.find((data) => data.ObjectID === fixedObjectID);
+    if (URLObjectId) {
+      const item = mockData.find((data) => data.ObjectID === URLObjectId);
       setData(item || null);
     }
-  }, []);
+  }, [URLObjectId]);
 
   const getImageForAssetType = (assetType: string) => {
     switch (assetType) {
