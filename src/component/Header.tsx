@@ -114,7 +114,7 @@ const Header = () => {
                 <Avatar
                   alt="Test User"
                   src="../data/Images/logo.png"
-                  sx={{ backgroundColor: "#ff6a4d" }}
+                  sx={{ backgroundColor: "#FFFFF" }}
                 />
               </IconButton>
             </Tooltip>

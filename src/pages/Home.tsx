@@ -1,8 +1,8 @@
 import React from "react";
 import Header from "../component/Header";
 import Description from "../component/Description";
-import NavButton from "../component/NavButton";
 import { Box } from "@mui/material";
+import NavButtonLayout from "../component/NavilgationButtonLayout";
 
 interface HomeProps {
   objectId?: string;
@@ -17,7 +17,7 @@ const Home: React.FC<HomeProps> = ({ objectId }) => {
           <Description objectId={objectId} />
         </Box>
       </Box>
-      <NavButton objectId={objectId}/>
+      <NavButtonLayout />
     </div>
   );
 };

@@ -1,16 +1,11 @@
 import { Box, Card, Grid, Paper, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import machine1 from "../data/Images/AT960.svg";
-import machine2 from "../data/Images/GLOBAL9x8AdvantageEVO.svg";
-import machine3 from "../data/Images/RomerArm7.svg";
 import cmmImage from "../data/Images/Hexagon_CMM_MI_GLOBAL S_09x08_TOUCH_Right_Product_Photo.jpg";
 import LTImage from "../data/Images/Leica-Absolute-Tracker-AT960-M.jpg";
 import armImage from "../data/Images/Absolute-Arm-7-Axis-product-image.jpg";
-
 import mockData from "../data/assetData.json";
 
-const Description = (props:any) => {
-  // const fixedObjectID = '3ca985c0-9a87-43a8-af1f-6fe89a65f41a';
+const Description = (props: any) => {
   console.log("Object Id in Description : " + props.objectId);
   const URLObjectId = props.objectId;
 
@@ -24,11 +19,11 @@ const Description = (props:any) => {
 
   const getImageForAssetType = (assetType: string) => {
     switch (assetType) {
-      case 'CMM':
+      case "CMM":
         return cmmImage;
-      case 'Tracker':
+      case "Tracker":
         return LTImage;
-      case 'Arm':
+      case "Arm":
         return armImage;
       default:
         return null;
@@ -40,30 +35,25 @@ const Description = (props:any) => {
     ? new Date(timestamp).toLocaleString()
     : "No telemetry data available";
 
-    const imageSrc = getImageForAssetType(data?.AssetType ?? '');
+  const imageSrc = getImageForAssetType(data?.AssetType ?? "");
 
   return (
     <Box
       sx={{
-        display: "flex",
-        justifyContent: "center",
-        m: 1,
         width: "100%",
-        height: { xs: "50vh", md: "40vh" },
+        height: { xs: "auto", md: "50vh" },
       }}
     >
-      <Paper elevation={3} sx={{ width: "100%", height: "100%" }}>
-        <Grid
-          container
-          spacing={2}
-          sx={{
-            height: "100%",
-            mt: 1,
-            alignItems: "flex-start",
-            justifyContent: "center",
-          }}
-          direction={{ xs: "row", md: "column" }}
-        >
+      <Paper
+        elevation={3}
+        sx={{
+          height: "100%",
+          overflowY: "auto",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <Grid container spacing={2} sx={{ height: "100%" }}>
           <Grid
             item
             xs={12}
@@ -83,43 +73,54 @@ const Description = (props:any) => {
               />
             )}
           </Grid>
-
           <Grid
             item
             xs={12}
             md={8}
             sx={{
               display: "flex",
-              alignItems: { xs: "center", md: "flex-end" },
-              justifyContent: { xs: "center", md: "flex-start" },
-              p: ".5rem",
-              margin: ".5rem",
-              textAlign: { xs: "center", md: "left" },
+              flexDirection: "column",
+              justifyContent: "center",
+              p: 2,
+              textAlign: "left",
             }}
           >
-            <Card variant="outlined" sx={{ p: ".5rem" }} raised={true}>
-              <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold' }}>
+            <Card variant="outlined" sx={{ p: 2, ml: 2 }}>
+              <Typography variant="h6" gutterBottom sx={{ fontWeight: "bold" }}>
                 {data?.Name}
               </Typography>
-              <Grid container spacing={1}>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
                 {[
                   { label: "Asset Type", value: data?.AssetType },
                   { label: "Model", value: data?.Model },
                   { label: "Last Telemetry Timestamp", value: localTime },
                   { label: "Description", value: data?.Description },
                 ].map((item, index) => (
-                  <React.Fragment key={index}>
-                    <Grid item xs={6} sx={{ textAlign: "right", pr: 2 }}>
+                  <Box
+                    key={index}
+                    sx={{
+                      display: "flex",
+                      width: "100%",
+                      mb: 1,
+                      flexDirection: { xs: "column", md: "row" },
+                    }}
+                  >
+                    <Box sx={{ flex: "1", textAlign: "left", pr: 2 }}>
                       <Typography variant="body1">
                         <strong>{item.label}:</strong>
                       </Typography>
-                    </Grid>
-                    <Grid item xs={6} sx={{ textAlign: "left" }}>
+                    </Box>
+                    <Box sx={{ flex: "1", textAlign: "left" }}>
                       <Typography variant="body1">{item.value}</Typography>
-                    </Grid>
-                  </React.Fragment>
+                    </Box>
+                  </Box>
                 ))}
-              </Grid>
+              </Box>
             </Card>
           </Grid>
         </Grid>
