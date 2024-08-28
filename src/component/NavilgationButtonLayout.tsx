@@ -10,6 +10,7 @@ import mockData from "../data/assetData.json";
 const NavButtonLayout = (props:any) => {
   const [data, setData] = useState<any>(null);
   const {objectId} = props;
+  let MAMLink = `https://nexus.hexagon.com/metrology-asset-manager/assetDetail/${objectId}`;
 
   useEffect(() => {
     if (objectId) {
@@ -36,17 +37,17 @@ const NavButtonLayout = (props:any) => {
         <NavButton
           background={MAMLogo}
           label="Metrology Asset Manager"
-          url="https://nexus.hexagon.com/metrology-asset-manager/assetDetail/3ca985c0-9a87-43a8-af1f-6fe89a65f41a"
+          url={MAMLink}
         />
       </Grid>
       <Grid item xs={4} sm={4} md={3}>
         <NavButton
           background={MRLogo}
           label="Metrology Reporting"
-          url="https://example.com/page2"
+          url="https://nexus.hexagon.com/metrology-reporting/home/7a5be78a-0c0d-4f54-9df9-702da71c2478/DB77C952-F356-11EE-ACE8-14755B5A8E75?report=cadInt&daterange=all"
         />
       </Grid>
-      {data?.AssetType !== 'Tracker' || data?.AssetType !== 'Arm' && <Grid item xs={4} sm={4} md={3}>
+      {data?.AssetType === 'CMM' && <Grid item xs={4} sm={4} md={3}>
         <NavButton
           background={MMLogo}
           label="Metrology Mentor"
