@@ -70,7 +70,7 @@ const Description = (props: any) => {
                 component="img"
                 src={imageSrc}
                 alt="Asset"
-                sx={{ maxHeight: 200, maxWidth: 200 }}
+                sx={{ maxHeight: 200, maxWidth: 200, marginTop: "1rem" }}
               />
             )}
           </Grid>
