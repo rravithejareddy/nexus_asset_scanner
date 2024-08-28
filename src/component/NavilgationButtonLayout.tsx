@@ -10,6 +10,7 @@ import mockData from "../data/assetData.json";
 const NavButtonLayout = (props:any) => {
   const [data, setData] = useState<any>(null);
   const {objectId} = props;
+  let MAMLink = `https://nexus.hexagon.com/metrology-asset-manager/assetDetail/${objectId}`;
 
   useEffect(() => {
     if (objectId) {
@@ -36,7 +37,7 @@ const NavButtonLayout = (props:any) => {
         <NavButton
           background={MAMLogo}
           label="Metrology Asset Manager"
-          url="https://nexus.hexagon.com/metrology-asset-manager/assetDetail/3ca985c0-9a87-43a8-af1f-6fe89a65f41a"
+          url={MAMLink}
         />
       </Grid>
       <Grid item xs={4} sm={4} md={3}>
