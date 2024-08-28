@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { HashRouter as Router } from "react-router-dom"; // Import BrowserRouter
+import { BrowserRouter as Router } from "react-router-dom"; // Import BrowserRouter
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
