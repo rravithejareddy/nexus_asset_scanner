@@ -100,6 +100,8 @@ const Description = (props: any) => {
                   { label: "Model", value: data?.Model },
                   { label: "Last Telemetry Timestamp", value: localTime },
                   { label: "Description", value: data?.Description },
+                  { label: "Service End Date", value: '2025-10-05' },
+
                 ].map((item, index) => (
                   <Box
                     key={index}

@@ -17,7 +17,7 @@ const Home: React.FC<HomeProps> = ({ objectId }) => {
           <Description objectId={objectId} />
         </Box>
       </Box>
-      <NavButtonLayout />
+      <NavButtonLayout objectId={objectId}/>
     </div>
   );
 };

@@ -4,12 +4,12 @@ import Home from "./pages/Home";
 import { Route, Routes } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
-function App() {
+const App = () => {
 
   const [objectId, setObjectId] = useState<any>();
   const location = useLocation();
 
-  console.log("Location url: " + location.pathname)
+  console.log("Location url: " + location.pathname);
 
   useEffect(() => {
     const pathParts = location.pathname.split("/");
