@@ -87,7 +87,14 @@ const Description = (props: any) => {
             }}
           >
             <Card variant="outlined" sx={{ p: 2, ml: 2 }}>
-              <Typography variant="h6" gutterBottom sx={{ fontWeight: "bold" }}>
+              <Typography
+                variant="h6"
+                gutterBottom
+                sx={{
+                  fontWeight: "bold",
+                  textAlign: { xs: "center", md: "left" },
+                }}
+              >
                 {data?.Name}
               </Typography>
               <Box
