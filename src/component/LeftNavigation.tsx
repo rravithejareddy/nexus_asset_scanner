@@ -9,6 +9,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
+import { ContactPage, Home, InfoRounded } from "@mui/icons-material";
 
 interface LeftNavigationProps {
   toggleDrawer: (open: boolean) => void;
@@ -27,7 +28,7 @@ const LeftNavigation: React.FC<LeftNavigationProps> = ({ toggleDrawer }) => {
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                <Home />{" "}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
@@ -40,7 +41,7 @@ const LeftNavigation: React.FC<LeftNavigationProps> = ({ toggleDrawer }) => {
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {index % 2 === 0 ? <ContactPage /> : <InfoRounded />}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>

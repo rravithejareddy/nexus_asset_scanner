@@ -46,7 +46,6 @@ const Header = () => {
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: ".2px",
               color: "inherit",
               textDecoration: "none",
             }}
@@ -91,12 +90,13 @@ const Header = () => {
             sx={{
               mr: "42px",
               display: { xs: "flex", md: "none" },
+              justifyContent: { xs: "center", md: "none" },
               flexGrow: 1,
               fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: ".5px",
               color: "inherit",
               textDecoration: "none",
+              fontSize: { xs: "20px", md: "24px" },
             }}
           >
             Asset Scanner

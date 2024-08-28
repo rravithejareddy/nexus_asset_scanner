@@ -1,9 +1,10 @@
-import { Box, Card, Grid, Paper, Typography } from "@mui/material";
+import { Box, Button, Card, Grid, Paper, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import cmmImage from "../data/Images/Hexagon_CMM_MI_GLOBAL S_09x08_TOUCH_Right_Product_Photo.jpg";
 import LTImage from "../data/Images/Leica-Absolute-Tracker-AT960-M.jpg";
 import armImage from "../data/Images/Absolute-Arm-7-Axis-product-image.jpg";
 import mockData from "../data/assetData.json";
+import ContactSupportIcon from "@mui/icons-material/ContactSupport";
 
 const Description = (props: any) => {
   console.log("Object Id in Description : " + props.objectId);
@@ -100,8 +101,7 @@ const Description = (props: any) => {
                   { label: "Model", value: data?.Model },
                   { label: "Last Telemetry Timestamp", value: localTime },
                   { label: "Description", value: data?.Description },
-                  { label: "Service End Date", value: '2025-10-05' },
-
+                  { label: "Service End Date", value: "2025-10-05" },
                 ].map((item, index) => (
                   <Box
                     key={index}
@@ -109,7 +109,7 @@ const Description = (props: any) => {
                       display: "flex",
                       width: "100%",
                       mb: 1,
-                      flexDirection: { xs: "column", md: "row" },
+                      flexDirection: { xs: "row", md: "row" },
                     }}
                   >
                     <Box sx={{ flex: "1", textAlign: "left", pr: 2 }}>
@@ -122,6 +122,20 @@ const Description = (props: any) => {
                     </Box>
                   </Box>
                 ))}
+              </Box>
+              <Box sx={{ display: "flex", justifyContent: "end" }}>
+                <Button
+                  sx={{
+                    backgroundColor: "#a2d769",
+                    fontWeight: "600",
+                    borderRadius: "8px",
+                  }}
+                  href="https://support.hexagonmi.com/s/"
+                  variant="contained"
+                  endIcon={<ContactSupportIcon />}
+                >
+                  Contact Support
+                </Button>
               </Box>
             </Card>
           </Grid>
